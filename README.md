@@ -1,8 +1,9 @@
-# Django Catalogue
+# Django ReadOnlyModel
 
-Provides CatalogueModel that can't be modified rather than with loading data from fixture.
+Provides ReadOnlyModel that can't be modified rather than with loading data from fixture.
 
-Also provides `load_catalogue_fixtures` management command to load fixtures defined in `fixtures` attribute for all catalogue models.
+Also provides `load_readonly_fixtures` management command to load fixtures defined in `fixtures` attribute for all
+registerd read-only models.
 
 
 ### Example
@@ -10,9 +11,9 @@ Also provides `load_catalogue_fixtures` management command to load fixtures defi
 For a given class
 
 ```python
-from django_catalogue import catalogue_model
+from django_readonlymodel import ReadOnlyModel
 
-class PostType(CatalogueModel):
+class PostType(ReadOnlyModel):
     fixtures = ['post_types.json']
     ...
 ```
@@ -20,7 +21,7 @@ class PostType(CatalogueModel):
 
 We can load fixtures
 ```
-$ ./manage.py load_catalogue_fixtures
+$ ./manage.py load_readonly_fixtures
 
 Loading post_types.json...
 Installed 14 object(s) from 1 fixture(s)

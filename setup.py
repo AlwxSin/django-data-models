@@ -33,11 +33,11 @@ class Tox(TestCommand):
 
 
 setup(
-    name='django_catalogue',
+    name='django_readonlymodel',
     version=__version__,
-    packages=['django_catalogue', 'django_catalogue.management', 'django_catalogue.management.commands'],
+    packages=['django_readonlymodel', 'django_readonlymodel.management', 'django_readonlymodel.management.commands'],
     include_package_data=True,
-    url='https://github.com/TriplePoint-Software/django_catalogue',
+    url='https://github.com/TriplePoint-Software/django_readonlymodel',
     license='Apache License, Version 2.0',
     maintainer='Max Syabro',
     maintainer_email='maxim@syabro.com',
