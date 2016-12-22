@@ -14,7 +14,7 @@ For a given class
 from django_readonlymodel import ReadOnlyModel
 
 class PostType(ReadOnlyModel):
-    fixtures = ['post_types.json']
+    fixtures_list = ['post_types.json']
     ...
 ```
 
