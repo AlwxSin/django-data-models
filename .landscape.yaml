@@ -1,0 +1,11 @@
+doc-warnings: yes
+test-warnings: no
+strictness: medium
+max-line-length: 120
+ignore-paths:
+    - _test_project
+uses:
+    - django
+autodetect: yes
+pep257:
+    run: false

@@ -1,0 +1,14 @@
+language: python
+python:
+  - "2.7"
+install:
+  - pip install tox
+env:
+  - TOXENV=django18
+  - TOXENV=django19
+script:
+  - tox
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
