@@ -26,3 +26,5 @@ $ ./manage.py load_readonly_fixtures
 Loading post_types.json...
 Installed 14 object(s) from 1 fixture(s)
 ```
+
+<a href="https://travis-ci.org/TriplePoint-Software/django_readonlymodel"><img src="https://travis-ci.org/TriplePoint-Software/django_readonlymodel.svg?branch=master"></a>
