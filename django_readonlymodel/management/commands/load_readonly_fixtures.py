@@ -1,8 +1,11 @@
+from django.conf import settings
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
 import django.apps
 
 from ...models import ReadOnlyModel
+
+LOADDATA_COMMAND = getattr(settings, 'READONLYMODEL_LOADDATA_COMMAND', 'loaddata')
 
 
 class Command(BaseCommand):
@@ -17,6 +20,6 @@ class Command(BaseCommand):
 
             for fixure in model.fixtures_list:
                 print("Loading %s..." % fixure)
-                call_command('loaddata', fixure, verbosity=1, skip_checks=True)
+                call_command(LOADDATA_COMMAND, fixure, verbosity=1, skip_checks=True)
                 print('')
 
