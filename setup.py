@@ -41,7 +41,7 @@ setup(
     license='Apache License, Version 2.0',
     maintainer='Max Syabro',
     maintainer_email='maxim@syabro.com',
-    description='Easy fixtures reloading',
+    description='Django\'s ReadOnlyModel',
     install_requires=["django>=1.8,<=1.10", "psycopg2>=2.6.2"],
     tests_require=["tox"],
     cmdclass={'test': Tox},
