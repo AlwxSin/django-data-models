@@ -1,4 +1,4 @@
-# Django Catalalogue
+# Django Catalogue
 
 Provides CatalogueModel that can't be modified rather than with loading data from fixture.
 
