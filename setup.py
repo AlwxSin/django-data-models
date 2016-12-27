@@ -33,17 +33,16 @@ class Tox(TestCommand):
 
 
 setup(
-    name='django_readonlymodel',
+    name='django_datamodels',
     version=__version__,
-    packages=['django_readonlymodel', 'django_readonlymodel.management', 'django_readonlymodel.management.commands'],
+    packages=['datamodels', 'datamodels.management', 'datamodels.management.commands'],
     include_package_data=True,
-    url='https://github.com/TriplePoint-Software/django_readonlymodel',
+    url='https://github.com/TriplePoint-Software/django-data-models',
     license='Apache License, Version 2.0',
-    maintainer='Max Syabro',
-    maintainer_email='maxim@syabro.com',
-    description='Django\'s ReadOnlyModel',
+    author='Max Syabro',
+    author_email='maxim@syabro.com',
+    description='Django\'s DataModels',
     install_requires=["django>=1.8,<=1.10", "psycopg2>=2.6.2"],
     tests_require=["tox"],
     cmdclass={'test': Tox},
-    # test_suite='runtests.runtests'
 )

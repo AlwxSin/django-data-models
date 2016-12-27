@@ -1,20 +1,17 @@
-# Django ReadOnlyModel
+# Django Data Models
 
-Provides ReadOnlyModel that can't be modified rather than with loading data from fixture.
-
-Also provides `load_readonly_fixtures` management command to load fixtures defined in `fixtures` attribute for all
-registerd read-only models.
-
+Provides DataModel that can't be used to describe fixtures in `fixtures` attribute to load using
+`datamodels_loaddata` command.
 
 ### Example
 
 For a given class
 
 ```python
-from django_readonlymodel import ReadOnlyModel
+from datamodels import DataModel
 
-class PostType(ReadOnlyModel):
-    fixtures_list = ['post_types.json']
+class PostType(DataModel):
+    fixtures = ['post_types.json']
     ...
 ```
 
@@ -27,4 +24,4 @@ Loading post_types.json...
 Installed 14 object(s) from 1 fixture(s)
 ```
 
-<a href="https://travis-ci.org/TriplePoint-Software/django_readonlymodel"><img src="https://travis-ci.org/TriplePoint-Software/django_readonlymodel.svg?branch=master"></a>
+<a href="https://travis-ci.org/TriplePoint-Software/django-data-models"><img src="https://travis-ci.org/TriplePoint-Software/django-data-models.svg?branch=master"></a>

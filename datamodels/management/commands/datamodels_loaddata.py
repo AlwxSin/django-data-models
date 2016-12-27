@@ -1,25 +1,26 @@
+import django.apps
 from django.conf import settings
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
-import django.apps
 
-from ...models import ReadOnlyModel
+from ...models import DataModel
 
-LOADDATA_COMMAND = getattr(settings, 'READONLYMODEL_LOADDATA_COMMAND', 'loaddata')
+LOADDATA_COMMAND = getattr(settings, 'DATAMODELS_LOADDATA_COMMAND', 'loaddata')
 
 
 class Command(BaseCommand):
-    help = 'Loads data for all ReadOnly Models'
+    help = 'Loads data for all DataModels'
 
     def handle(self, *args, **options):
         for model in django.apps.apps.get_models():
-            if not issubclass(model, ReadOnlyModel):
-                continue
-            if not model.fixtures_list:
+            if not issubclass(model, DataModel):
                 continue
 
-            for fixure in model.fixtures_list:
+            fixtures = getattr(model.DataModelMeta, 'fixtures', None)
+            if not fixtures:
+                continue
+
+            for fixure in fixtures:
                 print("Loading %s..." % fixure)
                 call_command(LOADDATA_COMMAND, fixure, verbosity=1, skip_checks=True)
                 print('')
-

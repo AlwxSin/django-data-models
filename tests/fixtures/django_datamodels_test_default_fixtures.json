@@ -1,0 +1,18 @@
+[
+{
+    "fields": {
+        "name": "New Name"
+
+    },
+    "model": "tests.posttype",
+    "pk": 1
+},
+{
+    "fields": {
+        "name": "Test Name 2"
+
+    },
+    "model": "tests.posttype",
+    "pk": 2
+}
+]
