@@ -7,6 +7,7 @@ class ReadOnlyModel(DataModel):
     class DataModelMeta:
         readonly = True
 
+
 class PostType(DataModel):
     name = models.CharField(max_length=255, default='Type')
 
@@ -14,4 +15,3 @@ class PostType(DataModel):
         fixtures = ['django_datamodels_test_fixtures']
         default_fixtures = ['django_datamodels_test_default_fixtures']
         readonly = True
-
