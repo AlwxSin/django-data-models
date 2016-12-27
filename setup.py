@@ -33,7 +33,7 @@ class Tox(TestCommand):
 
 
 setup(
-    name='django_datamodels',
+    name='django-data-models',
     version=__version__,
     packages=['datamodels', 'datamodels.management', 'datamodels.management.commands'],
     include_package_data=True,
