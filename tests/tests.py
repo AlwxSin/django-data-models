@@ -7,18 +7,23 @@ from .models import PostType, ReadOnlyModel
 
 class DataModelsReadOnlyTestCase(TestCase):
 
-    def test_model(self):
-        pt = ReadOnlyModel()
-        self.assertRaises(DataModelsReadOnlyException, pt.save)
-        self.assertRaises(DataModelsReadOnlyException, pt.delete)
+    def test_readonly_model(self):
+        self.assertRaises(DataModelsReadOnlyException, ReadOnlyModel().save)
+        self.assertRaises(DataModelsReadOnlyException, ReadOnlyModel().delete)
 
-    def test_manager(self):
+    def test_readonly_manager(self):
         self.assertRaises(DataModelsReadOnlyException, ReadOnlyModel.objects.all().delete)
-        self.assertRaises(DataModelsReadOnlyException, ReadOnlyModel.objects.all()._raw_delete)
         self.assertRaises(DataModelsReadOnlyException, ReadOnlyModel.objects.all().update)
-        self.assertRaises(DataModelsReadOnlyException, ReadOnlyModel.objects.all()._update)
         self.assertRaises(DataModelsReadOnlyException, ReadOnlyModel.objects.all().select_for_update)
         self.assertRaises(DataModelsReadOnlyException, ReadOnlyModel.objects.create)
+
+    def test_nonreadonly_model(self):
+        PostType().save()
+
+    def test_nonreadonly_manager(self):
+        PostType.objects.all().delete()
+        PostType.objects.all().update(name='1')
+        PostType.objects.create(name='3')
 
     def test_load_data(self):
         self.assertEqual(PostType.objects.count(), 0)

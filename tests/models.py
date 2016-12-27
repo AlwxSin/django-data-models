@@ -14,4 +14,3 @@ class PostType(DataModel):
     class DataModelMeta:
         fixtures = ['django_datamodels_test_fixtures']
         default_fixtures = ['django_datamodels_test_default_fixtures']
-        readonly = True
