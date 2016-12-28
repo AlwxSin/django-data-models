@@ -20,7 +20,7 @@ class Command(BaseCommand):
             if not fixtures:
                 continue
 
-            for fixure in fixtures:
-                print("Loading %s..." % fixure)
-                call_command(LOADDATA_COMMAND, fixure, verbosity=1, skip_checks=True)
+            for fixture in fixtures:
+                print("Loading %s..." % fixture)
+                call_command(LOADDATA_COMMAND, fixture, verbosity=1, skip_checks=True)
                 print('')

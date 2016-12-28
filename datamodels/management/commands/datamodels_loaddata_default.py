@@ -28,9 +28,9 @@ class Command(BaseCommand):
             if not default_fixtures:
                 continue
 
-            for fixure in default_fixtures:
-                print("Loading %s..." % fixure)
-                call_command(DefaultOnlyLoaddataComand(), fixure, verbosity=1, skip_checks=True)
+            for fixture in default_fixtures:
+                print("Loading %s..." % fixture)
+                call_command(DefaultOnlyLoaddataComand(), fixture, verbosity=1, skip_checks=True)
                 print('')
 
 
